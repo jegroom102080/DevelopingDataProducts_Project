@@ -11,6 +11,8 @@ shinyUI(
     ), 
     mainPanel(
       p('The Body mass index (BMI) is a calculation of body fat using a person\'s height and weight and only applies to adults.'),
+      p('Simpy input your height in inches, and weight in pounds into the fields to the left, and press the submit button.'),
+      p('Your BMI value, and the diagnostic of where you fall on the BMI Scale will be displayed below.'),
       p('Regarding the BMI measure, the World Health Organization (WHO) proposes the following classification:'),
       tags$div(
         tags$ul(
