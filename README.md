@@ -17,7 +17,7 @@ The files of the applications are:
 * ui.R
 * server.R
 
-Initially the values with be NaN and NA for your BME and the diagnostic.  It 
+Initially the values with be NaN and NA for your BMI and the diagnostic.  It 
 will populate a value after you press the submit button. 
 
 The application is accesible in: https://jegroom2.shinyapps.io/DevelopingDataProducts
