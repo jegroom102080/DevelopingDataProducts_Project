@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Body Mass Index (BMI) Calculator</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Body Mass Index (BMI) Calculator">
+  <meta name="author" content="Jason E. Groom">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Body Mass Index (BMI) Calculator</h1>
+    <h2>(Use arrow keys to navigate)</h2>
+    <p>Jason E. Groom<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Intro &amp; Motivation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Body Mass Index (BMI) is a simple index of weight-for-height that is commonly used to classify underweight, overweight and obesity in adults. It is defined as the weight in pounds divided by the square of the height in inches multiplied by 703 (lbs/in<sup>2)*703.</sup></p>
+
+<p>Key facts:</p>
+
+<p>Worldwide obesity has nearly doubled since 1980.</p>
+
+<p>35% of adults aged 20 and over were overweight in 2008, and 11% were obese.
+Obesity is preventable. WHO Obesity and Overweight Factwheet
+Good Nutrition and regular phisical activity are vital for good health and disease prevention. </p>
+
+<h2>BMI diagnostics are measured as follows:</h2>
+
+<p>BMI &lt;18.5 : Underweight</p>
+
+<p>BMI [18.5-24.9] : Normal weight</p>
+
+<p>BMI [25-29.9] : Overweight</p>
+
+<p>BMI &gt;=30 : Obesity</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>How is BMI calculated?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>There is a formula for calculating the BMI measure. The formula is the following:</p>
+
+<p>BMI = weight(lbs) * 703/ height(inches)<sup>2</sup>
+Thus for the next example, the BMI will be:</p>
+
+<pre><code class="r">weight &lt;- 220
+height &lt;- 71
+
+(weight*703)/(height^2)
+</code></pre>
+
+<pre><code>## [1] 30.68042
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Diagnostic</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The function use for calculating the diagnostic is the following:</p>
+
+<pre><code class="r">diagnostic_f&lt;-function(weight,height){
+  BMI_value&lt;-weight*703/(height^2)
+  ifelse(BMI_value&lt;12, &quot;Check inputs, if correct you are severely under weight&quot;, ifelse(BMI_value&lt;18.5,&quot;Under Weight&quot;,ifelse(BMI_value&lt;25,&quot;Normal&quot;,ifelse(BMI_value&lt;30,&quot;Over Weight&quot;,ifelse(BMI_value&lt;60, &quot;Obese&quot;, &quot;Check inputs, if correct you are severely over weight&quot;)))))
+}
+</code></pre>
+
+<p>This means that for the previous example of 220 pounds, and 71 inches, the diagnostic will be:</p>
+
+<pre><code class="r">diagnostic_f(220, 71)
+</code></pre>
+
+<pre><code>## [1] &quot;Obese&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The BMI is a relatively easy, non-invasive way to establish weight status, and for most people, it relates reasonably well to a person&#39;s body fat.  </p>
+
+<p>However, BMI is only a estemate for body fatness. Other things such as fitness can alter the relation between BMI and body fatness and must be taken into consideration. Lets consider a man that is very low body fat percentage. Because muscle is heavy, he may have a high BMI.  This is why it is only an estemate of a persons fatness. Also if a person has not been through puberty the measurment is not going to be accurate.  </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Intro &amp; Motivation'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='How is BMI calculated?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Diagnostic'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusion'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
