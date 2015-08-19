@@ -21,3 +21,7 @@ Initially the values with be NaN and NA for your BMI and the diagnostic.  It
 will populate a value after you press the submit button. 
 
 The application is accesible in: https://jegroom2.shinyapps.io/DevelopingDataProducts
+
+You can also see a pitch for the application at the following: http://jegroom102080.github.io/index.html
+
+To navigate the slides, simply use your up and down arrow keys. 
